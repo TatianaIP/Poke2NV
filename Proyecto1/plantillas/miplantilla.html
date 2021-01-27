@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS de la Nube CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+
+    <link rel="shortcut icon" href="map_78365.ico" type="image/x-icon">
+    <title>Pokemones 2NV</title>
+
+    <!--este kit es para colocar las fuentes en forma de imagen, se debe dejar en el final  -->
+    <script src="https://kit.fontawesome.com/eaf6669a79.js" crossorigin="anonymous"></script>
+
+  </head>
+   <body> <!--aca le doy la letra -->
+    <div class="container ">
+     
+      <h1 style="Color: yellow ">lISTA DE POKEMONES</h1>
+      <h2 style="Color: black ">Aqui podras ver tu lista de pokemones</h2>
+      <img  src="img/Pikachu1-768x683.jpg" alt="Card image" >
+      <!-- <p>{{temas.0}}</p> acceder al indice de una lista -->
+          {% if pokemones %}  <!--evalua que temas exista y tenga info-->
+            <div class="col-sm 12 col-md 6 col-lg 4">
+              {% for pokemon in pokemones %} <!--los bucles van entre llaves-->
+                <div  class="cards" style="width:400px"></div>
+                  <img  src="img/Pikachu1-768x683.jpg" alt="Card image" >
+                  <div class="card-body ">
+                    <h4 class="card-title">{{pokemon}}</h4>
+                    
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, provident repudiandae
+                      voluptates quod qui obcaecati debitis, maiores similique ipsa voluptatibus perspiciatis
+                      non expedita at soluta! Expedita impedit quo minima dolorem!</p>
+                    <a href=http://127.0.0.1:8000/pokemon/{{pokemon}} class="btn btn-primary">Habilidades</a>
+
+                  </div> <!--imprima el tema -->
+               </div>
+              {% endfor %} 
+            </div>
+          {% else %}
+            <p>No hay elementos que mostrar</p>
+             <div class="col-sm 12 col-md 8 col-lg 8">
+             {% for v in list %} 
+                    <div  class="cards">
+                        <div class="card-header" class="col-sm 12 col-md 8 col-lg 8">
+                           <strong>Nombre</strong>
+                           <br>
+                           <strong>{{v.name}}</strong>
+                        </div>
+                        <div class="card-body" class="col-sm 12 col-md 8 col-lg 8">
+                          <strong>url:{{v.url}}</strong>
+                       </div>
+                      </div>
+
+             {% endfor %} 
+             </div> <!--imprima el tema -->
+                
+            {% endif %}
+    </div>
+    <!-- Se colocan mis scripts -->
+    <!-- primero se coloca la libreria jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- Los pooper los cuales me crean ventanas emergentes -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <!-- Los bootstrap de JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>
